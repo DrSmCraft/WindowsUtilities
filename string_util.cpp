@@ -43,5 +43,6 @@ std::string *split_by_substring(std::string original, std::string substring) {
         original.erase(0, next + substring.length());
         index++;
     }
+    array[index] = original.substr(0);
     return array;
 }
