@@ -1,6 +1,3 @@
-//
-// Created by Riotoro on 1/2/2021.
-//
 #include <vector>
 
 #ifndef WINDOWSUTILITIES_STRING_UTIL_H

@@ -1,9 +1,4 @@
-//
-// Created by Riotoro on 1/4/2021.
-//
-
 #include <cstdio>
-#include <cstdlib>
 #include <cstring>
 #include <windows.h>
 
@@ -17,15 +12,14 @@ int main(int argv, char *args[]) {
 
     for (int i = 0; i < argv; ++i) {
 
-//        char *command = strcat((char *) "echo > ", args[i]);
-//        printf("%s\n", command);
-//        system(command);
-
-        if (strcmp(args[i], "-f") == 0) {
+        if (strcmp(args[i], "-f") == 0 || strcmp(args[i], "--force") == 0) {
             mode = CREATE_ALWAYS;
-        } else if(strcmp(args[i], "-?") == 0 || strcmp(args[i], "-h") == 0 || strcmp(args[i], "--help") == 0){
-            printf("Touch implementation for Windows by DrSmCraft");
-
+            continue;
+        } else if (strcmp(args[i], "-?") == 0 || strcmp(args[i], "-h") == 0 || strcmp(args[i], "--help") == 0) {
+            printf("Touch implementation for Windows by DrSmCraft\n");
+            printf("-?, --help  : Show this help message\n");
+            printf("-f, --force  : Overwrite file if it already exists\n");
+            return 0;
         }
 
 

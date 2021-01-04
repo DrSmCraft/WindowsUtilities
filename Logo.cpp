@@ -1,7 +1,3 @@
-//
-// Created by DrSmCraft on 1/3/2021.
-//
-
 #include <iostream>
 #include <cstring>
 #include <Windows.h>

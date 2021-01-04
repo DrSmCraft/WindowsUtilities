@@ -1,6 +1,3 @@
-//
-// Created by Riotoro on 1/2/2021.
-//
 #include <string>
 #include <iostream>
 #include "string_util.h"
