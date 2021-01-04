@@ -15,3 +15,5 @@ add_executable(Main
 
 add_executable(Logo
         Logo.cpp)
+
+add_executable(Touch Touch.cpp)
