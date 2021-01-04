@@ -5,6 +5,8 @@
 #include <iostream>
 #include "string_util.h"
 
+const std::string WHITESPACE_CHARS = "\t\n\v\f\r  ";
+const std::string EMPTY = "";
 
 std::string replace_all(int pos, std::string original, const std::string &to_replace, const std::string &replacement) {
     int next = pos;
@@ -30,19 +32,40 @@ int count_occurances(int pos, const std::string original, const std::string subs
     return total;
 }
 
-std::string *split_by_substring(std::string original, std::string substring) {
+std::vector<std::string> split_by_substring(std::string original, std::string substring) {
     int count = count_occurances(0, original, substring);
-    std::string *array = new std::string[count + 1];
+    std::vector<std::string> list;
+
 
     int index = 0;
     int next = 0;
     std::string token;
     while ((next = original.find(substring)) != std::string::npos) {
         token = original.substr(0, next);
-        array[index] = token;
+        list.push_back(token);
         original.erase(0, next + substring.length());
         index++;
     }
-    array[index] = original.substr(0);
-    return array;
+    list.push_back(original.substr(0));
+    return list;
+}
+
+std::string ltrim(std::string str) {
+
+    str.erase(0, str.find_first_not_of(WHITESPACE_CHARS));
+    return str;
+}
+
+
+std::string rtrim(std::string str) {
+
+    str.erase(0, str.find_first_not_of(WHITESPACE_CHARS));
+    return str;
+}
+
+std::string trim(std::string str) {
+
+    ltrim(str);
+    rtrim(str);
+    return str;
 }

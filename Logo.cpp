@@ -15,7 +15,7 @@ int main(int argv, char *args[]) {
 
     if (argv > 1) {
         for (int i = 1; i < argv; i++) {
-            if (strcmp(args[i], "-h") == 0 || strcmp(args[i], "--help") == 0) {
+            if (strcmp(args[i], "-h") == 0 || strcmp(args[i], "-?") == 0 || strcmp(args[i], "--help") == 0) {
                 printf("Microsoft Logo implement by DrSmCraft\n");
                 printf("Ascii Art taken from https://ascii.co.uk/art/microsoft\n");
                 return 0;
@@ -23,7 +23,7 @@ int main(int argv, char *args[]) {
                 no_animation = true;
             } else {
 
-                printf("ERROR: Unknown argument \"%s\"\nThis program does not accept any arguments other than -h and -n",
+                printf("ERROR: Unknown argument \"%s\"\nThis program does not accept any arguments other than -? and -n",
                        args[i]);
                 return -1;
 
